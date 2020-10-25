@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Quiz View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="QuizViewController" id="BYZ-38-t0r" customClass="QuizViewController" customModule="quizik" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question ?" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="eJW-hC-Lv1">
+                                <rect key="frame" x="15" y="124" width="384" height="30.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjO-ad-4oD">
+                                <rect key="frame" x="100" y="762" width="214" height="40"/>
+                                <color key="backgroundColor" red="0.81176470590000005" green="0.1215686275" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="An5-eC-i48"/>
+                                </constraints>
+                                <color key="tintColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="voO-sG-5h7"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2yp-zn-KN1">
+                                <rect key="frame" x="20" y="204.5" width="374" height="222"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Mso-M0-Mld">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="33"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDc-47-1it">
+                                                <rect key="frame" x="0.0" y="0.0" width="16" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epL-gC-egT" customClass="QuizOptionButton" customModule="quizik" customModuleProvider="target">
+                                                <rect key="frame" x="31" y="0.0" width="343" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Option 1"/>
+                                                <connections>
+                                                    <action selector="optionButton1Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yXl-4D-9XW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ymp-Zu-MiZ">
+                                        <rect key="frame" x="0.0" y="63" width="374" height="33"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sY8-WW-Rcy">
+                                                <rect key="frame" x="0.0" y="0.0" width="15.5" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkB-Zn-pZ0" customClass="QuizOptionButton" customModule="quizik" customModuleProvider="target">
+                                                <rect key="frame" x="30.5" y="0.0" width="343.5" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Option 2"/>
+                                                <connections>
+                                                    <action selector="optionButton2Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E8D-GQ-Mbx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PWd-rw-sp9">
+                                        <rect key="frame" x="0.0" y="126" width="374" height="33"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0W-tR-gae">
+                                                <rect key="frame" x="0.0" y="0.0" width="16.5" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcN-4s-zqF" customClass="QuizOptionButton" customModule="quizik" customModuleProvider="target">
+                                                <rect key="frame" x="31.5" y="0.0" width="342.5" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Option 3"/>
+                                                <connections>
+                                                    <action selector="optionButton3Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IOj-Hr-dal"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ff8-wr-gs6">
+                                        <rect key="frame" x="0.0" y="189" width="374" height="33"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jj-3d-EqX">
+                                                <rect key="frame" x="0.0" y="0.0" width="16" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhc-fO-LpH" customClass="QuizOptionButton" customModule="quizik" customModuleProvider="target">
+                                                <rect key="frame" x="31" y="0.0" width="343" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Option 4"/>
+                                                <connections>
+                                                    <action selector="optionButton4Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ub-lz-oDa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GjO-ad-4oD" secondAttribute="trailing" constant="100" id="3nC-b5-R2t"/>
+                            <constraint firstItem="2yp-zn-KN1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EUU-oe-88T"/>
+                            <constraint firstItem="2yp-zn-KN1" firstAttribute="top" secondItem="eJW-hC-Lv1" secondAttribute="bottom" constant="50" id="N0j-UQ-nVs"/>
+                            <constraint firstItem="GjO-ad-4oD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="aMs-6O-KBL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GjO-ad-4oD" secondAttribute="bottom" constant="60" id="aqU-mM-mn2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2yp-zn-KN1" secondAttribute="trailing" constant="20" id="c4M-EO-13j"/>
+                            <constraint firstItem="eJW-hC-Lv1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="kHs-kf-OFc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eJW-hC-Lv1" secondAttribute="trailing" constant="15" id="lWE-Nb-lrF"/>
+                            <constraint firstItem="eJW-hC-Lv1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="p1i-GX-ToD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="optionButton1" destination="epL-gC-egT" id="edW-I5-ttv"/>
+                        <outlet property="optionButton2" destination="OkB-Zn-pZ0" id="N9q-0o-4SM"/>
+                        <outlet property="optionButton3" destination="DcN-4s-zqF" id="Ta1-9a-P52"/>
+                        <outlet property="optionButton4" destination="zhc-fO-LpH" id="b9v-0a-UTF"/>
+                        <outlet property="questionText" destination="eJW-hC-Lv1" id="C7c-dp-cdp"/>
+                        <outlet property="submitButton" destination="GjO-ad-4oD" id="tkO-hD-g8k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="330" y="54"/>
+        </scene>
+    </scenes>
+</document>
