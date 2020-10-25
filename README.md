@@ -3,7 +3,7 @@ A quiz app
 
 API provided by Open Trivia DB  https://opentdb.com/api_config.php
 
-\n
+{nbsp} +
  
 | Screenshot 1     | Screenshot 2      |
 |------------|-------------|
