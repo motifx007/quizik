@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41615A43254575C800FE9E0D /* Screen Shot 2020-10-25 at 2.27.50 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 41615A41254575C700FE9E0D /* Screen Shot 2020-10-25 at 2.27.50 PM.png */; };
+		41615A44254575C800FE9E0D /* Screen Shot 2020-10-25 at 2.27.08 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 41615A42254575C800FE9E0D /* Screen Shot 2020-10-25 at 2.27.08 PM.png */; };
 		4172945C252B8E24004715F6 /* OpenTriviaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172945A252B8E24004715F6 /* OpenTriviaResponse.swift */; };
 		41817574254341A100484B13 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181756C254341A100484B13 /* Result.swift */; };
 		41817575254341A100484B13 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181756E254341A100484B13 /* APIError.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41615A41254575C700FE9E0D /* Screen Shot 2020-10-25 at 2.27.50 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-10-25 at 2.27.50 PM.png"; sourceTree = "<group>"; };
+		41615A42254575C800FE9E0D /* Screen Shot 2020-10-25 at 2.27.08 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-10-25 at 2.27.08 PM.png"; sourceTree = "<group>"; };
 		4172945A252B8E24004715F6 /* OpenTriviaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTriviaResponse.swift; sourceTree = "<group>"; };
 		4181756C254341A100484B13 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		4181756E254341A100484B13 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -57,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41615A40254570D800FE9E0D /* App Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				41615A42254575C800FE9E0D /* Screen Shot 2020-10-25 at 2.27.08 PM.png */,
+				41615A41254575C700FE9E0D /* Screen Shot 2020-10-25 at 2.27.50 PM.png */,
+			);
+			path = "App Screenshots";
+			sourceTree = "<group>";
+		};
 		4181756A254341A100484B13 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +117,7 @@
 		41CB3C422529C8CD007E4A4B = {
 			isa = PBXGroup;
 			children = (
+				41615A40254570D800FE9E0D /* App Screenshots */,
 				41CB3C4D2529C8CD007E4A4B /* quizik */,
 				41CB3C4C2529C8CD007E4A4B /* Products */,
 			);
@@ -196,6 +210,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				41CB3C5B2529C8D2007E4A4B /* LaunchScreen.storyboard in Resources */,
+				41615A43254575C800FE9E0D /* Screen Shot 2020-10-25 at 2.27.50 PM.png in Resources */,
+				41615A44254575C800FE9E0D /* Screen Shot 2020-10-25 at 2.27.08 PM.png in Resources */,
 				41CB3C582529C8D2007E4A4B /* Assets.xcassets in Resources */,
 				41CB3C562529C8CE007E4A4B /* Main.storyboard in Resources */,
 			);

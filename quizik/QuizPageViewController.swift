@@ -12,12 +12,11 @@ import AVFoundation
 private let reuseIdentifier = "Cell"
 
 class QuizPageViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource{
-
+    
     var position:Int = 0
     var pageClosed = false
-
-        var collectionView: UICollectionView!
-    var startSpeak = true
+    
+    var collectionView: UICollectionView!
     
     let pageControl = UIPageControl()
     
@@ -29,56 +28,55 @@ class QuizPageViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     var gifArray = [String]()
     
-    static var PNG: [UInt8] = [0x89]
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         addCollectionView()
         addPageControl()
-
+        
         collectionView.register(QuizPageViewControllerCell.self, forCellWithReuseIdentifier: cellId)
         
         configStatusBar()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-          super.viewWillDisappear(animated)
-          
-          configStatusBarGreen()
-      }
-      
-      func configStatusBarGreen(){
-                
-                if #available(iOS 13.0, *) {
-                    let statusBar = UIView(frame: UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
-                    statusBar.backgroundColor = UIColor.blue
-                    UIApplication.shared.keyWindow?.addSubview(statusBar)
-                } else {
-                    let statusBar1: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
-                    statusBar1.backgroundColor = UIColor.red
-                }
-            }
-      
-      func configStatusBar(){
-             
-             if #available(iOS 13.0, *) {
-                 let statusBar = UIView(frame: UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
-                 statusBar.backgroundColor = UIColor.white
-                 UIApplication.shared.keyWindow?.addSubview(statusBar)
-             } else {
-                 let statusBar1: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
-                 statusBar1.backgroundColor = UIColor.white
-             }
-         }
+        super.viewWillDisappear(animated)
+        
+        configStatusBarGreen()
+    }
+    
+    func configStatusBarGreen(){
+        
+        if #available(iOS 13.0, *) {
+            let statusBar = UIView(frame: UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
+            statusBar.backgroundColor = UIColor.blue
+            UIApplication.shared.keyWindow?.addSubview(statusBar)
+        } else {
+            let statusBar1: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+            statusBar1.backgroundColor = UIColor.red
+        }
+    }
+    
+    func configStatusBar(){
+        
+        if #available(iOS 13.0, *) {
+            let statusBar = UIView(frame: UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
+            statusBar.backgroundColor = UIColor.white
+            UIApplication.shared.keyWindow?.addSubview(statusBar)
+        } else {
+            let statusBar1: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+            statusBar1.backgroundColor = UIColor.white
+        }
+    }
     
     override func viewDidLayoutSubviews() {
         pageControl.subviews.forEach{
             $0.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         }
     }
-
+    
     
     func setupNavigationBar(){
         let leftbuttonIcon = UIImage(named: "assist_speaker")
@@ -92,10 +90,10 @@ class QuizPageViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     @objc func skipSelected(){
         self.dismiss(animated: true, completion: nil)
-//        delegate?.voiceAssistCompleted(position: position)
+        //        delegate?.voiceAssistCompleted(position: position)
     }
     
-
+    
     
     func addCollectionView(){
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -136,11 +134,11 @@ class QuizPageViewController: UIViewController, UICollectionViewDelegateFlowLayo
         pageControl.currentPageIndicatorTintColor = UIColor.red
         pageControl.pageIndicatorTintColor = UIColor.green
     }
-
+    
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
-
+        
         print("pageControl.currentPage - ", pageControl.currentPage)
         textArray = tempTextArray[pageControl.currentPage]
         
@@ -151,21 +149,21 @@ class QuizPageViewController: UIViewController, UICollectionViewDelegateFlowLayo
         return tempTextArray.count
     }
     
-
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! QuizPageViewControllerCell
         
         cell.backgroundColor = .white
-            
-                
+        
+        
         textArray = tempTextArray[indexPath.item]
         print("pageControl.currentPage - ", pageControl.currentPage)
         if let currentIndex = collectionView.indexPathsForVisibleItems.first {
             print("currentIndex - ", currentIndex.row)
         }
-
-
+        
+        
         return cell
     }
     
