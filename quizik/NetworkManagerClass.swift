@@ -9,10 +9,11 @@
 import Foundation
 
 class NetworkManagerClass{
-    func fetchQuizBloc(completionHandler: @escaping ([Results]) -> Void) {
-      let url = URL(string: "https://opentdb.com/api.php?amount=10&type=multiple")!
-
-      let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+    func fetchQuizBloc(difficulty: String, category: String, type: String, completionHandler: @escaping ([Results]) -> Void) {
+        let full_url = URL(string: url + "amount=10" +  "&category=\(category)&difficulty=\(difficulty)&type=\(type)")!
+        
+        
+      let task = URLSession.shared.dataTask(with: full_url, completionHandler: { (data, response, error) in
         if let error = error {
           print("Error with fetching quiz data: \(error)")
           return
@@ -31,4 +32,13 @@ class NetworkManagerClass{
       })
       task.resume()
     }
+    
+}
+
+enum Response_Codes : String {
+    case Success = "Returned results successfully"
+    case No_Results = "Could not return results. The API doesn't have enough questions for your query. (Ex. Asking for 50 Questions in a Category that only has 20.)"
+    case Invalid_Parameter = "Contains an invalid parameter. Arguements passed in aren't valid. (Ex. Amount = Five)"
+    case Token_Not_Found = "Session Token does not exist."
+    case Token_Empty = "Session Token has returned all possible questions for the specified query. Resetting the Token is necessary."
 }

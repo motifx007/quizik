@@ -39,6 +39,7 @@ class QuizPageViewController: UIViewController, UICollectionViewDelegateFlowLayo
         collectionView.register(QuizPageViewControllerCell.self, forCellWithReuseIdentifier: cellId)
         
         configStatusBar()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -172,9 +173,5 @@ class QuizPageViewController: UIViewController, UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)
     }
-    
-}
-
-class QuizPageViewControllerCell : UICollectionViewCell{
     
 }
