@@ -11,6 +11,9 @@ import Foundation
 let url = "https://opentdb.com/api.php?"
 let correct_url = "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
 
+
+//Opentrivia Category list
+let category_url = "https://opentdb.com/api_category.php"
 //Using a Session Token:
 let using_ssession_token = "https://opentdb.com/api.php?amount=10&token=YOURTOKENHERE"
 

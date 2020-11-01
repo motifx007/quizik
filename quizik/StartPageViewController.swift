@@ -19,7 +19,7 @@ class StartPageViewController: UIViewController {
 
     @IBAction func startQuizButtonAction(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "QuizViewController")
+        let vc = storyboard.instantiateViewController(withIdentifier: "QuizCategoryViewController")
         self.navigationController?.modalTransitionStyle = .crossDissolve
         self.navigationController?.pushViewController(vc, animated: false)
     }

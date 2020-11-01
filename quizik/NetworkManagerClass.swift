@@ -33,6 +33,30 @@ class NetworkManagerClass{
       task.resume()
     }
     
+    func fetchCategories(completionHandler: @escaping ([Trivia_categories]) -> Void) {
+        let full_url = URL(string: category_url)!
+        
+        
+      let task = URLSession.shared.dataTask(with: full_url, completionHandler: { (data, response, error) in
+        if let error = error {
+          print("Error with fetching quiz data: \(error)")
+          return
+        }
+        
+        guard let httpResponse = response as? HTTPURLResponse,
+              (200...299).contains(httpResponse.statusCode) else {
+          print("Error with the response, unexpected status code: \(response)")
+          return
+        }
+
+        if let data = data,
+          let openTriviaCategoryResponse = try? JSONDecoder().decode(OpenTriviaCategoryResponse.self, from: data) {
+            completionHandler(openTriviaCategoryResponse.trivia_categories ?? [])
+        }
+      })
+      task.resume()
+    }
+    
 }
 
 enum Response_Codes : String {

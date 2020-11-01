@@ -10,6 +10,10 @@ import UIKit
 
 class QuizViewController: UIViewController {
     
+    var category_id: String!
+    
+    @IBOutlet weak var progressView: UIProgressView!
+    
     @IBOutlet weak var questionText: UILabel!
     
     @IBOutlet weak var stackView: UIStackView!
@@ -27,10 +31,14 @@ class QuizViewController: UIViewController {
 
     var count = 0
     
+    var timerCounter: Timer?
+    var timerCount = 0.0
+    let progress = Progress(totalUnitCount: 10)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        NetworkManagerClass().fetchQuizBloc(difficulty: Difficulty.Easy.rawValue, category: Category.General_Knowledge.rawValue, type: Type.Multiple_Choice.rawValue){
+        
+        NetworkManagerClass().fetchQuizBloc(difficulty: Difficulty.Easy.rawValue, category: category_id, type: Type.Multiple_Choice.rawValue){
             [weak self] (quizBloc) in
             
             self?._response = quizBloc
@@ -40,6 +48,7 @@ class QuizViewController: UIViewController {
             }
             
         }
+        
         
         
 //Uncoment The below line for setting default values
@@ -67,12 +76,17 @@ class QuizViewController: UIViewController {
         alert.view.addSubview(loadingIndicator)
         self.questionText.isHidden = true
         self.stackView.isHidden = true
+        self.progressView.isHidden = true
         
         self.present(alert, animated: false, completion: nil)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.timerCounter?.invalidate()
+    }
+    
     func changeQuestion(question: String){
-        questionText.text = "Q. \(question)"
+        questionText.text = "Q\(count + 1). \(question)"
     }
     
     func changeQuizOptions(quizOptionButton: UIButton, optionText: String){
@@ -167,7 +181,7 @@ class QuizViewController: UIViewController {
         optionButton3.isUserInteractionEnabled = false
         optionButton4.isUserInteractionEnabled = false
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             self.count = self.count + 1
             self.optionButton1.isChecked = false
             self.optionButton2.isChecked = false
@@ -175,10 +189,14 @@ class QuizViewController: UIViewController {
             self.optionButton4.isChecked = false
             if self.count != 10{
                 self.dataStorage()
+                self.timerCounter?.invalidate()
             }
             else{
                 self.navigationController?.popViewController(animated: true)
-            }        })
+                self.timerCounter?.invalidate()
+            }
+            
+        })
         
         
         
@@ -203,11 +221,40 @@ class QuizViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
             self.questionText.isHidden = false
             self.stackView.isHidden = false
+            self.progressView.isHidden = false
             
             self.optionButton1.isUserInteractionEnabled = true
             self.optionButton2.isUserInteractionEnabled = true
             self.optionButton3.isUserInteractionEnabled = true
             self.optionButton4.isUserInteractionEnabled = true
+                    
+            self.progressView.progress = 0.0
+            self.timerCount = 0.0
+            self.progressView.progressTintColor = UIColor.blue
+//            self.progress.completedUnitCount = 0
+
+            self.timerCounter = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true){
+                (timer) in
+                guard self.timerCount < 8.0 else{
+                    timer.invalidate()
+                    self.submitButtonAction()
+                    return
+                }
+
+//                self.progress.completedUnitCount += 1
+                self.timerCount += 0.01
+                if self.timerCount > 6.0 {
+                    self.progressView.progressTintColor = UIColor.red.withAlphaComponent(0.6)
+                }
+                self.progressView.setProgress(Float(self.timerCount / 8.0), animated: true)
+            }
+//            UIView.animate(withDuration: 0.0, animations: {
+//                self.progressView.setProgress(0.0, animated: true)
+//            })
+//            UIView.animate(withDuration: 6.0, animations: {
+//                self.progressView.setProgress(1.0, animated: true)
+//            })
+            
         }
     }
 }
@@ -253,9 +300,9 @@ class QuizOptionButton: UIButton{
     
     override func awakeFromNib() {
         self.isChecked = false
-        self.setTitleColor(.white, for: .normal)
-        self.titleEdgeInsets.left = 25.0
-        self.layer.cornerRadius = self.frame.size.height / 2
+        self.setTitleColor(.black, for: .normal)
+//        self.titleEdgeInsets.left = 25.0
+        self.layer.cornerRadius = self.frame.size.height / 10
     }
 }
 
