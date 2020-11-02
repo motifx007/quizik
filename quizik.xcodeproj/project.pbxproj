@@ -31,6 +31,9 @@
 		41CB3C562529C8CE007E4A4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41CB3C542529C8CE007E4A4B /* Main.storyboard */; };
 		41CB3C582529C8D2007E4A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41CB3C572529C8D2007E4A4B /* Assets.xcassets */; };
 		41CB3C5B2529C8D2007E4A4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41CB3C592529C8D2007E4A4B /* LaunchScreen.storyboard */; };
+		41F1318425507D8100261F9F /* startquiz_page1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F1318325507D8100261F9F /* startquiz_page1.png */; };
+		41F1318625507D9F00261F9F /* quizcategory_page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F1318525507D9E00261F9F /* quizcategory_page2.png */; };
+		41F1318825507DB300261F9F /* quizview_page3.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F1318725507DB300261F9F /* quizview_page3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		41CB3C572529C8D2007E4A4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41CB3C5A2529C8D2007E4A4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41CB3C5C2529C8D2007E4A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41F1318325507D8100261F9F /* startquiz_page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startquiz_page1.png; sourceTree = "<group>"; };
+		41F1318525507D9E00261F9F /* quizcategory_page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quizcategory_page2.png; sourceTree = "<group>"; };
+		41F1318725507DB300261F9F /* quizview_page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quizview_page3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,9 @@
 		41615A40254570D800FE9E0D /* App Screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				41F1318325507D8100261F9F /* startquiz_page1.png */,
+				41F1318525507D9E00261F9F /* quizcategory_page2.png */,
+				41F1318725507DB300261F9F /* quizview_page3.png */,
 				41615A42254575C800FE9E0D /* Screen Shot 2020-10-25 at 2.27.08 PM.png */,
 				41615A41254575C700FE9E0D /* Screen Shot 2020-10-25 at 2.27.50 PM.png */,
 			);
@@ -229,6 +238,9 @@
 			files = (
 				41CB3C5B2529C8D2007E4A4B /* LaunchScreen.storyboard in Resources */,
 				41615A43254575C800FE9E0D /* Screen Shot 2020-10-25 at 2.27.50 PM.png in Resources */,
+				41F1318625507D9F00261F9F /* quizcategory_page2.png in Resources */,
+				41F1318825507DB300261F9F /* quizview_page3.png in Resources */,
+				41F1318425507D8100261F9F /* startquiz_page1.png in Resources */,
 				41615A44254575C800FE9E0D /* Screen Shot 2020-10-25 at 2.27.08 PM.png in Resources */,
 				41CB3C582529C8D2007E4A4B /* Assets.xcassets in Resources */,
 				41CB3C562529C8CE007E4A4B /* Main.storyboard in Resources */,
